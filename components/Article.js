@@ -102,15 +102,67 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+/* my code starts here. */
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  function articleMaker(article) {
 
-  Step 3: Don't forget to return something from your function!
+  // TASK 5- Instantiate all the elements needed for a panel
+  const art1 = document.createElement('div')
+  const artTitle = document.createElement('h2')
+  const artDate = document.createElement('p')
+  const artContent = document.createElement('p')
+  const artContent2 = document.createElement('p')
+  const artContent3 = document.createElement('p')
+  const buttonOpen = document.createElement('span')
+  // const buttonClose = document.createElement('span')
+  
+  articles.appendChild(art1)
+  art1.appendChild(artTitle, artContent, artContent2, artContent3, artDate, buttonOpen, artSpan)
+  buttonOpen.appendChild(buttonClose)
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+  // TASK 7- Add proper class names to our elements (See index.html for reference)
+  art1.classList.add('article')
+  artDate.classList.add('date')
+  artContent.classList.add('content')
+  buttonOpen.classList.add('expandButton')
+  
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+  // TASK 8- Set text content using arguments as raw material
+  //  and also using the open and close arrows imported at the top of the file
+  artTitle.textContent = data.title
+  artDate.textContent = data.date
+  artContent.textContent = data.firstParagraph
+  artContent2.textContent = data.secondParagraph
+  artContent3.textContent = data.thirdParagraph
+  
+  buttonOpen.textContent = close
+  buttonClose.textContent = open
+
+
+
+  date
+  // TASK 9- When the 'open' or 'close' buttons are clicked, the content is toggled on/off:
+  //  - the open button needs to go away (the 'hide-btn' class name controls this)
+  //  - the close button needs to show (the 'hide-btn' class name controls this)
+  //  - the contents need to show (the 'toggle-on' class name controls this)
+  panelButtons.addEventListener("click", () => {
+    openButton.classList.toggle("hide-btn")
+    closeButton.classList.toggle("hide-btn")
+    panelContent.classList.toggle("toggle-on")
+  })
+
+  // don't forget to return the panel!
+  return panel
+}
+
+//   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+//   This listener should toggle the class 'article-open' on div.article.
+
+//   Step 3: Don't forget to return something from your function!
+
+//   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+//   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+
+//   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+//   Refresh the page to see the new article.
+// */
