@@ -16,7 +16,110 @@ let menuItems = [
     <ul>
       {each menu item as an <li>}
     </ul>
-  </div>
+  </div>*/
+
+  function menuMaker(array) {
+
+    const items = document.createElement('div')
+    const unordered = document.createElement('ul')
+    const listed = document.createElement('li')
+    const menuArray = menuItems
+    
+    menuArray.forEach(item => {
+      const listed = document.createElement('li')
+      listed.textContent = item
+      unordered.appendChild(listed)
+    })
+    
+    const menuButton = document.querySelector('.menu-button')
+    
+    items.classList.add('menu')
+    
+    items.appendChild(unordered)
+    
+    listed.textContent = menuArray
+    
+    menuButton.addEventListener('click', () => {
+      items.classList.toggle('menu--open')
+    })
+      return items
+    }
+    
+    const header = document.querySelector('.header')
+    
+    menuItems.map(menuItems=> {
+      const x = menuMaker(menuItems)
+    header.appendChild(x)
+    })
+
+
+  // function menuMaker(menuItems){
+
+  //   const items = document.createElement('div')
+  //   const unordered = document.createElement('ul')
+  //   const listed = document.createElement('li')
+  //   const menuArray = menuItems
+
+  //   menuArray.forEach(item => {
+  //     const listed = document.createElement('li')
+  //     listed.textContent = item
+  //     unordered.appendChild(listed)
+
+
+  //   })
+
+  //   const menuButton = document.querySelector('.menu-button')
+
+  //   items.classList.add('menu')
+
+  //   items.appendChild(unordered)
+
+  //   listed.textContent = menuArray
+
+  //   menuButton.addEventListener('click', () => {
+    
+  //   items.classList.toggle('menu--open')
+
+
+  //   })
+
+  //   return items
+
+  // }
+
+  // const header = document.querySelector('.header')
+  //   menuItems.forEach(menuItems => {
+  //   const x = menuMaker(menuItems)
+  //   header.appendChild(x)
+
+  // })
+
+
+
+
+
+
+    
+
+
+    
+  
+  
+  // console.log(menuItems)
+/*
+
+const menuNo = document.querySelector('.articles')
+
+
+  menuItems.forEach(data =>{
+    let MenuYes = menuMaker(menuItems)
+    menu.appendChild(menuYes)
+
+
+  }
+ )
+
+ 
 
   The 'menuMaker' takes an array of menu items as its only argument.
 
